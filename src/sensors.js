@@ -14,7 +14,7 @@ const {
 const listenerKeys = new Map([
   ["accelerometer", "Accelerometer"],
   ["gyroscope", "Gyroscope"],
-  ["deviceMotion", "DeviceMotion"],
+  ["devicemotion", "DeviceMotion"],
   ["magnetometer", "Magnetometer"],
   ["barometer", "Barometer"]
 ]);
@@ -22,7 +22,7 @@ const listenerKeys = new Map([
 const nativeApis = new Map([
   ["accelerometer", AccNative],
   ["gyroscope", GyroNative],
-  ["deviceMotion", DeviceMotionNative],
+  ["devicemotion", DeviceMotionNative],
   ["magnetometer", MagnNative],
   ["barometer", BarNative]
 ]);
@@ -30,7 +30,7 @@ const nativeApis = new Map([
 const eventEmitterSubsciption = new Map([
   ["accelerometer", null],
   ["gyroscope", null],
-  ["deviceMotion", null],
+  ["devicemotion", null],
   ["magnetometer", null],
   ["barometer", null]
 ]);
@@ -79,13 +79,13 @@ function makeSingleton() {
 
 const accelerometer = createSensorObservable("accelerometer");
 const gyroscope = createSensorObservable("gyroscope");
-const deviceMotion = createSensorObservable("deviceMotion");
+const devicemotion = createSensorObservable("devicemotion");
 const magnetometer = createSensorObservable("magnetometer");
 const barometer = createSensorObservable("barometer");
 
 export default {
   gyroscope,
-  deviceMotion,
+  devicemotion,
   accelerometer,
   magnetometer,
   barometer

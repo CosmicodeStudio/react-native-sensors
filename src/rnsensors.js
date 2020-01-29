@@ -16,7 +16,7 @@ if (!GyroNative && !DeviceMotionNative && !AccNative && !MagnNative && !BarNativ
 const nativeApis = new Map([
   ["accelerometer", AccNative],
   ["gyroscope", GyroNative],
-  ["deviceMotion", DeviceMotionNative],
+  ["devicemotion", DeviceMotionNative],
   ["magnetometer", MagnNative],
   ["barometer", BarNative]
 ]);

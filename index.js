@@ -6,8 +6,8 @@ export const SensorTypes = {
   gyroscope: "gyroscope",
   magnetometer: "magnetometer",
   barometer: "barometer",
-  deviceMotion: "deviceMotion"
+  devicemotion: "devicemotion"
 };
 
-export const { accelerometer, gyroscope, magnetometer, barometer, deviceMotion } = sensors;
+export const { accelerometer, gyroscope, magnetometer, barometer, devicemotion } = sensors;
 export default sensors;
