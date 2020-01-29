@@ -62,17 +62,17 @@ RCT_EXPORT_METHOD(setUpdateInterval:(double) interval) {
 }
 
 RCT_EXPORT_METHOD(getUpdateInterval:(RCTResponseSenderBlock) cb) {
-    double interval = self->_motionManager.devicemotionUpdateInterval;
+    double interval = self->_motionManager.deviceMotionUpdateInterval;
     NSLog(@"getUpdateInterval: %f", interval);
     cb(@[[NSNull null], [NSNumber numberWithDouble:interval]]);
 }
 
 RCT_EXPORT_METHOD(getData:(RCTResponseSenderBlock) cb) {
-    double x = self->_motionManager.devicemotion.gravity.x;
-    double y = self->_motionManager.devicemotion.gravity.y;
-    double z = self->_motionManager.devicemotion.gravity.z;
+    double x = self->_motionManager.deviceMotion.gravity.x;
+    double y = self->_motionManager.deviceMotion.gravity.y;
+    double z = self->_motionManager.deviceMotion.gravity.z;
 
-    NSLog(@"getData: %f, %f, %f, %f", x, y, z, timestamp);
+    NSLog(@"getData: %f, %f, %f, %f", x, y, z);
 
     cb(@[[NSNull null], @{
                  @"x" : [NSNumber numberWithDouble:x],
