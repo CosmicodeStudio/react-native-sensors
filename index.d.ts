@@ -35,8 +35,8 @@ declare module "react-native-sensors" {
 
   type SensorsBase = {
     accelerometer: Observable<SensorData>;
-    gyroscope: Observable<MotionData>;
-    deviceMotion: Observable<SensorData>;
+    gyroscope: Observable<SensorData>;
+    deviceMotion: Observable<MotionData>;
     magnetometer: Observable<SensorData>;
     barometer: Observable<BarometerData>;
   };
