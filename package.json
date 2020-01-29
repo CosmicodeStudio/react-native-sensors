@@ -81,7 +81,7 @@
     "prop-types": "^15.6.0"
   },
   "dependencies": {
-    "rxjs": ">= 6"
+    "rxjs": "^6.5.4"
   },
   "devDependencies": {
     "all-contributors-cli": "6.1.2",
