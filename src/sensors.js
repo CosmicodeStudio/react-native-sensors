@@ -4,6 +4,7 @@ import { publish, refCount } from "rxjs/operators";
 import * as RNSensors from "./rnsensors";
 
 const {
+  DeviceMotion: DeviceMotionNative,
   Gyroscope: GyroNative,
   Accelerometer: AccNative,
   Magnetometer: MagnNative,
@@ -13,6 +14,7 @@ const {
 const listenerKeys = new Map([
   ["accelerometer", "Accelerometer"],
   ["gyroscope", "Gyroscope"],
+  ["deviceMotion", "DeviceMotion"],
   ["magnetometer", "Magnetometer"],
   ["barometer", "Barometer"]
 ]);
@@ -20,6 +22,7 @@ const listenerKeys = new Map([
 const nativeApis = new Map([
   ["accelerometer", AccNative],
   ["gyroscope", GyroNative],
+  ["deviceMotion", DeviceMotionNative],
   ["magnetometer", MagnNative],
   ["barometer", BarNative]
 ]);
@@ -27,6 +30,7 @@ const nativeApis = new Map([
 const eventEmitterSubsciption = new Map([
   ["accelerometer", null],
   ["gyroscope", null],
+  ["deviceMotion", null],
   ["magnetometer", null],
   ["barometer", null]
 ]);
@@ -75,11 +79,13 @@ function makeSingleton() {
 
 const accelerometer = createSensorObservable("accelerometer");
 const gyroscope = createSensorObservable("gyroscope");
+const deviceMotion = createSensorObservable("deviceMotion");
 const magnetometer = createSensorObservable("magnetometer");
 const barometer = createSensorObservable("barometer");
 
 export default {
   gyroscope,
+  deviceMotion,
   accelerometer,
   magnetometer,
   barometer

@@ -1,12 +1,13 @@
 import { NativeModules } from "react-native";
 const {
   Gyroscope: GyroNative,
+  DeviceMotion: DeviceMotionNative,
   Accelerometer: AccNative,
   Magnetometer: MagnNative,
   Barometer: BarNative
 } = NativeModules;
 
-if (!GyroNative && !AccNative && !MagnNative && !BarNative) {
+if (!GyroNative && !DeviceMotionNative && !AccNative && !MagnNative && !BarNative) {
   throw new Error(
     "Native modules for sensors not available. Did react-native link run successfully?"
   );
@@ -15,6 +16,7 @@ if (!GyroNative && !AccNative && !MagnNative && !BarNative) {
 const nativeApis = new Map([
   ["accelerometer", AccNative],
   ["gyroscope", GyroNative],
+  ["deviceMotion", DeviceMotionNative],
   ["magnetometer", MagnNative],
   ["barometer", BarNative]
 ]);
