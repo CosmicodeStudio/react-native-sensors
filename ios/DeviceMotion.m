@@ -11,7 +11,7 @@ RCT_EXPORT_MODULE();
 
 - (id) init {
     self = [super init];
-    NSLog(@"Gyroscope");
+    NSLog(@"DeviceMotion");
 
     if (self) {
         self->_motionManager = [[CMMotionManager alloc] init];
@@ -21,7 +21,7 @@ RCT_EXPORT_MODULE();
 
 - (NSArray<NSString *> *)supportedEvents
 {
-  return @[@"Gyroscope"];
+  return @[@"DeviceMotion"];
 }
 
 + (BOOL)requiresMainQueueSetup
@@ -86,7 +86,7 @@ RCT_EXPORT_METHOD(startUpdates) {
     NSLog(@"startUpdates");
     [self->_motionManager startDeviceMotionUpdates];
 
-    /* Receive the gyroscope data on this block */
+    /* Receive the device motion data on this block */
     [self->_motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue mainQueue]
                                       withHandler:^(CMDeviceMotion *motionData, NSError *error)
      {

@@ -4,6 +4,7 @@ declare module "react-native-sensors" {
   type Sensors = {
     accelerometer: "accelerometer";
     gyroscope: "gyroscope";
+    deviceMotion: "deviceMotion";
     magnetometer: "magnetometer";
     barometer: "barometer";
   };
@@ -22,13 +23,20 @@ declare module "react-native-sensors" {
     timestamp: string;
   }
 
+  interface MotionData {
+    x: number;
+    y: number;
+    z: number;
+  }
+
   interface BarometerData {
     pressure: number;
   }
 
   type SensorsBase = {
     accelerometer: Observable<SensorData>;
-    gyroscope: Observable<SensorData>;
+    gyroscope: Observable<MotionData>;
+    deviceMotion: Observable<SensorData>;
     magnetometer: Observable<SensorData>;
     barometer: Observable<BarometerData>;
   };
@@ -36,6 +44,7 @@ declare module "react-native-sensors" {
   export const {
     accelerometer,
     gyroscope,
+    deviceMotion,
     magnetometer,
     barometer
   }: SensorsBase;
